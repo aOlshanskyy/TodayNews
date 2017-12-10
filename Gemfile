@@ -43,8 +43,13 @@ end
 
 #Devise
 gem 'devise'
+
 # Activeadmin
 gem 'activeadmin'
+
+#Bootstrap
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'jquery-rails'
 
 
 
