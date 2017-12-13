@@ -1,4 +1,5 @@
 <h1>Today News </h1>
 <% @articles.each do |article|%>
-<%= article.title %>
+<h3><%= article.title %></h3>
+<h5><%= article.body %></h5>
 <%end%>
