@@ -2,4 +2,4 @@
 <small>
 			<time><%= article.created_at.to_date.strftime("%d %B, %Y") %></time>
 </small>
-<h5><%= article.body %></h5>
+<p><%= sanitize article.body %></p>

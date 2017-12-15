@@ -50,6 +50,8 @@ gem 'activeadmin'
 #Bootstrap
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+#Redactor
+gem 'tinymce-rails'
 
 
 
