@@ -8,7 +8,8 @@ class ArticlesController < ApplicationController
 
 	def create
 	  if current_user.role == "Editor"	
-       pp @article = current_user.articles.build(article_params)
+	   params[:article][:category_id]=params[:category_id]
+        @article = current_user.articles.build(article_params)
         if @article.save
       	  redirect_to root_path
         else
@@ -32,6 +33,10 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
+	end
+
+	def categories
+        pp @articles=Article.where(category_id: params[:id])
 	end
 
 	private

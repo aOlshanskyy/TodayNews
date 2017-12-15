@@ -2,13 +2,13 @@
  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
     <div class="navbar-header">
-     <strong> <a class="navbar-brand" href="#">Home</a></strong>
+     <strong> <%=link_to root_path, class:"navbar-brand" do%>Home<%end%></strong>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="#">Наука</a></li>
-      <li><a href="#">Техніка</a></li>
-      <li><a href="#">Спорт</a></li>
-      <li><a href="#">Політика</a></li>
+      <li><%=link_to categories_path(1) do%>Наука<%end%></li>
+      <li><%=link_to categories_path(2) do %>Спорт <%end%></li>
+      <li><%=link_to categories_path(3) do %>Політика <%end%></li>
+      <li><%=link_to categories_path(4) do %>Техніка <%end%></li>
     </ul>
     <% if current_user.nil? %>
     <%= link_to user_session_path do %>
