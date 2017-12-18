@@ -9,6 +9,12 @@
 </div>
 
 <div class="form-group">
+  <%= f.label :shortbody %>
+  <%= f.text_area :shortbody, :class => "tinymce", :rows => 5, :cols => 120 %>
+ <%= tinymce %><br/>
+</div>
+
+<div class="form-group">
   <%= f.label :body %>
   <%= f.text_area :body, :class => "tinymce", :rows => 40, :cols => 120 %>
  <%= tinymce %><br/>
