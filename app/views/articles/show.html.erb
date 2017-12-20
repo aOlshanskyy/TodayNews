@@ -1,3 +1,23 @@
 <h1><%= @article.title%></h1>
 <%= sanitize @article.body %>
+<%= tinymce %><br/>
+<%= link_to  vote_article_path(@article.id) do%><i class="glyphicon glyphicon-thumbs-up" ></i> <%end%>(<%= @votes%>) <br/>
+<% @comments.each do |comment|%>
+<p>Author: <%= comment.user.nickname %> </p>
+<p><%=comment.textofcom%></p>
+<p>Create at: <%= comment.created_at %></p>
+<%end%>
+
+<%= form_for :articlescomment, url: article_articlescomments_path(@article.id) do |article| %>
+
+<% if flash[:notice] %>
+	<div class="notice"> <%= flash[:notice] %> </div>
+<% end %>
+<div align="center">
+<p><%= article.label "Write Comment" %></p>
+<%= article.text_area :textofcom, cols: 10, rows: 5 %><br />
+<dr/>
+<p><%= article.submit "Send"%></p>
+</div>
+<%end%>
 

@@ -4,9 +4,16 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: 'pages#index'
-  resources :articles do
-  end
-    get "/categories/:id", to: "articles#categories", as: "categories" 	
- 
+
+    get "/categories/:id", to: "articles#categories", as: "categories" 	 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :articles do
+  	resources :articlescomments
+    member do
+    get :vote
+  end
+  end
+
 end
+
