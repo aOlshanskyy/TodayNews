@@ -3,9 +3,11 @@
 <%= tinymce %><br/>
 <%= link_to  vote_article_path(@article.id) do%><i class="glyphicon glyphicon-thumbs-up" ></i> <%end%>(<%= @votes%>) <br/>
 <% @comments.each do |comment|%>
-<p>Author: <%= comment.user.nickname %> </p>
+<hr>
+<p><%= image_tag comment.user.avatar.url(:thumb), width: 30, height: 30 %>
+ <%= comment.user.nickname %> </p>
 <p><%=comment.textofcom%></p>
-<p>Create at: <%= comment.created_at %></p>
+<p>Create at: <%= comment.created_at %></p><hr>
 <%end%>
 
 <%= form_for :articlescomment, url: article_articlescomments_path(@article.id) do |article| %>

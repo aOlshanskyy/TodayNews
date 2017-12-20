@@ -53,6 +53,9 @@ gem 'jquery-rails'
 #Redactor
 gem 'tinymce-rails'
 
+#Avatar
+gem "paperclip", "~> 5.0.0"
+
 
 
 group :development do
