@@ -56,8 +56,9 @@ gem 'tinymce-rails'
 #Avatar
 gem "paperclip", "~> 5.0.0"
 
-#Heroku
+group :production do
 gem 'pg'
+end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
